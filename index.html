@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/MotionPathPlugin.min.js"></script>
+
+  <style>
+    html,
+    body {
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    .aos-zoom-out {
+      width: 100%;
+      margin: 0 auto;
+
+      z-index: 1;
+    }
+
+    #img1 {
+      transform: scale(7);
+      z-index: 1;
+    }
+
+    .img-zoom {
+      transform: scale(1.5);
+      z-index: 1;
+    }
+
+    .title {
+      min-height: 100vh;
+      width: 100%;
+      background-image: url("/img1.jpg");
+      background-position: center;
+      background-size: cover;
+      z-index: 10;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.62);
+      width: 100%;
+      height: 100%;
+      min-height: 100vh;
+      opacity: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      z-index: 20;
+    }
+
+    .container-2,
+    .container-1 {
+      width: 100%;
+      margin: 0;
+      color: white;
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container-2 {
+      min-height: 100vh;
+      position: relative;
+    }
+
+    #content {
+      overflow-x: hidden;
+      min-height: 2500px;
+      background-color: black;
+    }
+  </style>
+
+  <div id="content" class="container-1">
+    <div class="title">
+      <div class="overlay">
+        <h1>Watches 8 Aheathy leap head</h1>
+      </div>
+    </div>
+    <div class="container-2">
+      <img id="img1" src="./img2.png" class="aos-zoom-out img-zoom" />
+    </div>
+    <div class="container-2">
+      <img id="img2" src="./img3.png" class="aos-zoom-out img-zoom" />
+    </div>
+    <div class="container-2">
+      <img id="img3" src="./img4.png" class="aos-zoom-out img-zoom" />
+    </div>
+    <div class="container-2">
+      <img id="img4" src="./img5.png" class="aos-zoom-out img-zoom" />
+    </div>
+    <div class="container-2">
+      <img id="img5" src="./img6.png" class="aos-zoom-out img-zoom" />
+    </div>
+  </div>
+
+  <script>
+    const text = document.querySelector(".overlay h1");
+    const animationText = gsap.timeline({
+      scrollTrigger: {
+        trigger: text,
+        toggleActions: "restart pause reverse pause",
+        start: "top 40%",
+        end: "bottom 30px",
+        scrub: 1,
+      },
+
+    });
+    animationText.to(text, { y: -200, duration: 2 });
+
+    animationText.to(text, { opacity: 0, duration: 1 });
+    const overlay = document.querySelector(".overlay");
+    gsap.to(overlay, {
+      scrollTrigger: {
+        trigger: overlay,
+        toggleActions: "restart pause reverse pause",
+
+        scrub: 2,
+        pin: true,
+      },
+      duration: 5,
+      backgroundColor: "rgba(0, 0, 0, 0.0)",
+    });
+
+    const title = document.querySelector(".title");
+    gsap.to(title, {
+      scrollTrigger: {
+        trigger: title,
+        toggleActions: "restart pause reverse pause",
+
+        scrub: 2,
+        pin: true,
+      },
+      duration: 9,
+      opacity: 0,
+    });
+    const img = document.querySelector("#img1");
+    const animation1 = gsap.timeline({
+      scrollTrigger: {
+        trigger: img,
+        toggleActions: "restart pause reverse pause",
+
+        scrub: 2,
+        pin: true,
+        start: "top -50%",
+        end: "bottom bottom",
+      },
+    });
+    animation1.to(img, { scale: 0.5, y: -500, duration: 8 });
+     animation1.to(img, { scale: 0.3,
+      y: -700,
+      opacity: 0.5,
+      duration: 4,
+    });
+
+    const img2 = document.querySelector("#img2");
+    const animation2 = gsap.timeline({
+      scrollTrigger: {
+        trigger: img2,
+        toggleActions: "restart pause reverse pause",
+        scrub: 2,
+        pin: true,
+
+        start: "-50% 50%",
+        end: "bottom top",
+      },
+    });
+    animation2.to(img2, { scale: 1, y: -400, duration: 6 });
+    animation2.to(img2, {
+      scale: 0.5,
+      y: -600,
+      opacity: 0.8,
+      duration: 8,
+    });
+    animation2.to(img2, {
+      scale: 0.4,
+      y: -650,
+      opacity: 0.6,
+      duration: 4,
+    });
+
+    const img3 = document.querySelector("#img3");
+    const animation3 = gsap.timeline({
+      scrollTrigger: {
+        trigger: img3,
+        toggleActions: "restart pause reverse pause",
+        scrub: 2,
+        pin: true,
+        start: "-50% 90%",
+        end: "bottom top",
+      },
+    });
+    animation3.to(img3, { scale: 1.8, y: -500, duration: 1 });
+    animation3.to(img3, { scale: 0.7, y: -700, duration: 2 });
+    animation3.to(img3, {
+      scale: 0.5,
+      y: -800,
+      opacity: 0.5,
+      duration: 4,
+    });
+    const img4 = document.querySelector("#img4");
+    const animation4 = gsap.timeline({
+      scrollTrigger: {
+        trigger: img4,
+        toggleActions: "restart pause reverse pause",
+        scrub: 2,
+        pin: true,
+        start: "-50% 90%",
+        end: "bottom top",
+      },
+    });animation4.to(img4, { scale: 1.8, y: -500, duration: 4 });
+    animation4.to(img4, { scale: 0.7, y: -700, duration: 6 });
+    animation4.to(img4, {
+      scale: 0.5,
+      y: -900,
+      opacity: 0.5,
+      duration: 4,
+    });
+    const img5 = document.querySelector("#img5");
+    const animation5 = gsap.timeline({
+      scrollTrigger: {
+        trigger: img5,
+        toggleActions: "restart pause reverse pause",
+        scrub: 2,
+        pin: true,
+
+        start: "top 60%",
+        end: "bottom -40%",
+      },
+    });
+    animation5.to(img5, { scale: 0.5, y: -300, duration: 2 });
+    animation5.to(img5, {
+      scale: 0.3,
+      y: -800,
+      opacity: 0.5,
+      duration: 4,
+    });
+  
+
+  </script>
+</body>
+
+</html>
