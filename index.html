@@ -7,10 +7,11 @@
   <title>Document</title>
 </head>
 
+
+
+
+
 <body>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/MotionPathPlugin.min.js"></script>
 
   <style>
     html,
@@ -18,11 +19,9 @@
       margin: 0;
       box-sizing: border-box;
     }
-
     .aos-zoom-out {
       width: 100%;
       margin: 0 auto;
-
       z-index: 1;
     }
 
@@ -39,7 +38,7 @@
     .title {
       min-height: 100vh;
       width: 100%;
-      background-image: url("/img1.jpg");
+      background-image: url("https://nfocus.qa/wonder/wp-content/uploads/2023/10/1.jpg");
       background-position: center;
       background-size: cover;
       z-index: 10;
@@ -48,8 +47,7 @@
     .overlay {
       background-color: rgba(0, 0, 0, 0.62);
       width: 100%;
-      height: 100%;
-      min-height: 100vh;
+      height: 100vh;
       opacity: 1;
       display: flex;
       justify-content: center;
@@ -70,7 +68,7 @@
     }
 
     .container-2 {
-      min-height: 100vh;
+      min-height: 60vh;
       position: relative;
     }
 
@@ -88,21 +86,23 @@
       </div>
     </div>
     <div class="container-2">
-      <img id="img1" src="./img2.png" class="aos-zoom-out img-zoom" />
+      <img id="img1" src="https://nfocus.qa/wonder/wp-content/uploads/2023/09/hero_static__eo06dl4zx1oy_large-1.jpg" />
     </div>
     <div class="container-2">
-      <img id="img2" src="./img3.png" class="aos-zoom-out img-zoom" />
+      <img id="img2" src="https://nfocus.qa/wonder/wp-content/uploads/2023/09/hero_static__eo06dl4zx1oy_large-1.jpg" class="aos-zoom-out img-zoom" />
+    </div>
+    <div class="container-https://nfocus.qa/wonder/wp-content/uploads/2023/09/hero_static__eo06dl4zx1oy_large-1.jpg" class="aos-zoom-out img-zoom" />
     </div>
     <div class="container-2">
-      <img id="img3" src="./img4.png" class="aos-zoom-out img-zoom" />
+      <img id="img4" src="https://nfocus.qa/wonder/wp-content/uploads/2023/09/hero_static__eo06dl4zx1oy_large-1.jpg" class="aos-zoom-out img-zoom" />
     </div>
     <div class="container-2">
-      <img id="img4" src="./img5.png" class="aos-zoom-out img-zoom" />
-    </div>
-    <div class="container-2">
-      <img id="img5" src="./img6.png" class="aos-zoom-out img-zoom" />
+      <img id="img5" src="https://nfocus.qa/wonder/wp-content/uploads/2023/09/hero_static__eo06dl4zx1oy_large-1.jpg" class="aos-zoom-out img-zoom" />
     </div>
   </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/MotionPathPlugin.min.js"></script>
 
   <script>
     const text = document.querySelector(".overlay h1");
@@ -152,10 +152,12 @@
 
         scrub: 2,
         pin: true,
-        start: "top -50%",
+        start: "50% 99%",
         end: "bottom bottom",
       },
     });
+    animation1.to(img, { scale: 11, y: -350, duration: 0 });
+    animation1.to(img, { scale: 3, y: -50, duration: 0.5 });
     animation1.to(img, { scale: 0.5, y: -500, duration: 8 });
      animation1.to(img, { scale: 0.3,
       y: -700,
